@@ -33,7 +33,10 @@
 #   * sox
 #   * lame
 #
-
+# Specify IBM Bluemix API credentials
+# follow instructions here to get key and url https://cloud.ibm.com/docs/speech-to-text?topic=speech-to-text-gettingStarted
+# key is long string separated by underscore(s). API_OPTS assumes US english, but there are many other language options available
+# see full API reference at: https://cloud.ibm.com/apidocs/speech-to-text
 
 
 # set PATH
@@ -42,8 +45,8 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # Specify IBM Bluemix API credentials
 API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-API_URL="https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v1/recognize"
-API_OPTS="?model=en-US_NarrowbandModel"
+API_URL="https://api.us-east.speech-to-text.watson.cloud.ibm.com/instances/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+API_OPTS="/v1/recognize?model=en-US_NarrowbandModel"
 
 
 # save the current directory
@@ -122,7 +125,8 @@ else
   sed '$d' < stream.part2 >> stream.new
 
   # beginning of transcription section
-  echo -e "\n--- Automated transcription result ---\n " >> stream.new
+#  echo -e "\n--- Automated transcription result ---\n " >> stream.new
+  echo "\n--- Automated transcription result ---\n " >> stream.new
 
   # append result of transcription
   echo "$TRANSCRIPT" >> stream.new

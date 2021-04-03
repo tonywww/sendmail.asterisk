@@ -125,8 +125,8 @@ else
   sed '$d' < stream.part2 >> stream.new
 
   # beginning of transcription section
-#  echo -e "\n--- Automated transcription result ---\n " >> stream.new
-  echo "\n--- Automated transcription result ---\n " >> stream.new
+  echo -e "\n--- Automated transcription result ---\n " >> stream.new
+#  echo "\n--- Automated transcription result ---\n " >> stream.new
 
   # append result of transcription
   echo "$TRANSCRIPT" >> stream.new

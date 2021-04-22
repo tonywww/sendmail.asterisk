@@ -6,8 +6,11 @@ Tested on Asterisk v13.
 ## Usage:
 copy this file to /usr/sbin/ set ownership to asterisk:asterisk and make it executable.
 
-    In the [general] section of /etc/asterisk/voicemail.conf
-    set mailcmd=/usr/sbin/sendmail.asterisk
+In the [general] section of /etc/asterisk/voicemail.conf
+
+````
+set mailcmd=/usr/sbin/sendmail.asterisk
+````
 
 Permissions - More: Make sure the asterisk user can execute (and that they exist - fwiw, a new 
                     install of FreePBX circa March 2020, I didn't need to change or install anything):
@@ -15,9 +18,10 @@ Permissions - More: Make sure the asterisk user can execute (and that they exist
    * sox
    * lame
 
-
-
-
+## Express Install:
+````
+bash <(wget -qO- 'https://raw.githubusercontent.com/tonywww/sendmail.asterisk/master/sendmail.asterisk-install.sh')
+````
 
 ## Specify IBM Bluemix API credentials
 follow instructions here to get key and url
